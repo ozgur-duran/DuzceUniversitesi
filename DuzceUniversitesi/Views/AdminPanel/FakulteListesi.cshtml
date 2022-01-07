@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DuzceUniversitesi_Model.Models.Fakulte>
+@{
+    ViewData["Title"] = "FakulteListesi";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+<h2 class="mb-4">Fakülteler</h2>
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Fakülte Adı</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FakulteId</td>
+            <td>@item.FakulteAd</td>
+            <td><a href="/AdminPanel/GetirFakulte/@item.FakulteId" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/AdminPanel/SilFakulte/@item.FakulteId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/YeniFakulte" class="btn btn-primary">Yeni Fakülte Ekle</a>

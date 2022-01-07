@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DuzceUniversitesi_Model.Models.Duyuru>
+@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<div class="row m-md-auto">
+    <div class="col">
+        <div class="row m-0 p-0">
+            <div class="col">
+                <div id="hero">
+                    <video autoplay loop muted>
+                        <source src="~/duzcevideo.mp4" type="video/mp4" />
+                    </video>
+
+                </div>
+            </div>
+        </div>
+ 
+        <div class="row m-0 pt-3">
+            <div class="col-lg-8 col-sm-12 ">
+                <img src="/unifoto.jpg" class="img-fluid">
+            </div>
+            <div class="col-lg-4 col-sm-12">
+                <h2>
+                    KENTİMİZ VE SANAYİ ELELE
+                    ÜRETEN ÜNİVERSİTE
+                </h2>
+                <p class="text-justify">Sanayi ve iş dünyası ile üniversiteyi ortak akıl, ortak hedef ve ortak başarı ilkeleri doğrultusunda ortak projelerle biraraya getirerek üniversitenin ve sanayinin gelişmesine katkıda bulunmaktır.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-sm-12">
+                <div class="p-3 mb-2 bg-info text-white mt-3 text-center"><p class="text-break m-0 p-0 " >DUYURULAR</p> </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+            <div class="col-lg-4 col-sm-12 mt-2 text-white ">
+                <div class="card bg-secondary">                 
+                        <h5 class="card-title text-body text-center">@item.DuyuruKonu</h5>
+                        <p class="card-text">@item.DuyuruAçıklama</p>
+                        <p class="card-text text-white"><small class="text-dark">@item.DuyuruOlusturulmaTarihi</small></p>
+                </div>
+            </div>
+            
+            }
+        </div>
+
+
+        
+
+        
+
+    </div>
+</div>
+ 

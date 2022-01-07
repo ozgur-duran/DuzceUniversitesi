@@ -1,0 +1,25 @@
+﻿@model DuzceUniversitesi_Model.Models.Duyuru
+@{
+    ViewData["Title"] = "GetirDuyuru";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<h2 class="mt-4">Duyuru Güncelleme</h2>
+<hr />
+@using (Html.BeginForm("DuyuruGuncelle", "AdminPanel", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.DuyuruId)
+    @Html.TextBoxFor(x => x.DuyuruId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.DuyuruKonu)
+    @Html.TextBoxFor(x => x.DuyuruKonu, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DuyuruAçıklama)
+    @Html.TextAreaFor(x => x.DuyuruAçıklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.DuyuruOlusturulmaTarihi)
+    @Html.TextBoxFor(x => x.DuyuruOlusturulmaTarihi, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Duyuru Güncelle</button>
+
+}

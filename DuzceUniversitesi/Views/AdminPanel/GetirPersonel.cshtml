@@ -1,0 +1,30 @@
+﻿@model DuzceUniversitesi_Model.Models.AkademikPersonel
+@{
+    ViewData["Title"] = "GetirPersonel";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<h2 class="mt-4">Akademik Personel Güncelleme</h2>
+<hr />
+@using (Html.BeginForm("PersonelGuncelle", "AdminPanel", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.AkademikPersonelId)
+    @Html.TextBoxFor(x => x.AkademikPersonelId, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.AkademikPersonelAdSoyad)
+    @Html.TextBoxFor(x => x.AkademikPersonelAdSoyad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AkademikPersonelDersler)
+    @Html.TextAreaFor(x => x.AkademikPersonelDersler, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AkademikPersonelMail)
+    @Html.TextBoxFor(x => x.AkademikPersonelMail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AkademikPersonelGorsel)
+    @Html.TextBoxFor(x => x.AkademikPersonelGorsel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.AkademikPersonelDogumTarihi)
+    @Html.TextBoxFor(x => x.AkademikPersonelDogumTarihi, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Duyuru Güncelle</button>
+}

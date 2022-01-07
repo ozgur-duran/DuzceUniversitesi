@@ -1,0 +1,16 @@
+﻿@model DuzceUniversitesi_Model.Models.Fakulte
+@{
+    ViewData["Title"] = "YeniFakulte";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+
+<h1>Yeni Fakülte Ekle</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.FakulteAd)
+    @Html.TextBoxFor(x=>x.FakulteAd,new { @class="form-control"})
+    <br />
+    <button class="btn btn-success">Fakülte Ekle</button>
+
+</form>
+

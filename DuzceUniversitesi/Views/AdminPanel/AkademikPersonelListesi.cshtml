@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DuzceUniversitesi_Model.Models.AkademikPersonel>
+@{
+    ViewData["Title"] = "AkademikPersonelListesi";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+<h2 class="mb-4">Akademik Personeller</h2>
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Ad-Soyad</th>
+        <th>Dersler</th>
+        <th>Doğum Tarihi</th>
+        <th>Mail</th>
+        <th>Görsel</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.AkademikPersonelId</td>
+            <td>@item.AkademikPersonelAdSoyad</td>
+            <td>@item.AkademikPersonelDersler</td>
+            <td>@item.AkademikPersonelDogumTarihi</td>
+            <td>@item.AkademikPersonelMail</td>
+            <td>@item.AkademikPersonelGorsel</td>
+            <td><a href="/AdminPanel/GetirPersonel/@item.AkademikPersonelId" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="/AdminPanel/SilPersonel/@item.AkademikPersonelId" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/AdminPanel/YeniPersonel" class="btn btn-primary">Yeni Akademik Personel Ekle</a>

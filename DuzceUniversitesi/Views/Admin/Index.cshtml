@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1.0" />
+    <title>Admin Panel Login</title>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="contact-form">
+            <img src="~/images.png"  class="admin-img"/>
+            <h2 class="text-center">Admin Paneli Giriş</h2>
+            @using(Html.BeginForm("Index","Admin",FormMethod.Post))
+            {
+                <div class="txtb">
+                    <input type="text" name="AdminKullaniciAdi" placeholder="Kullanıcı Adı" />
+                </div>
+                <div class="txtb">
+                    <input type="password" name="AdminSifre" placeholder="Şifre" />
+                </div>
+                <input type="submit" class="logbtn" value="Giriş" />
+            }
+        </div>
+
+    </div>
+
+</body>
+
+
+
+</html>
+

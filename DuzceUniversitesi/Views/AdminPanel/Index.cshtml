@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DuzceUniversitesi_Model.Models.Duyuru>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminPanelLayout.cshtml";
+}
+<h2 class="mb-4">Duyurular</h2>
+
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>ID</th>
+        <th>Konu</th>
+        <th>Duyuru Tarihi</th>
+        <th>GÜNCELLE</th>
+        <th>SİL</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.DuyuruId</td>
+            <td>@item.DuyuruKonu</td>
+            <td>@item.DuyuruOlusturulmaTarihi</td>
+            <td><a href="/AdminPanel/GetirDuyuru/@item.DuyuruId" class="btn btn-primary">Güncelle</a></td>
+            <td><a href="AdminPanel/SilDuyuru/@item.DuyuruId" class="btn btn-danger">Sil</a></td>
+        </tr>
+            }
+
+        
+    </table>
+<a href="/AdminPanel/YeniDuyuru" class="btn btn-primary">Yeni Duyuru Ekle</a>
+
